@@ -1,0 +1,11 @@
+name: udacity-dynamic-risk-assessment-system
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - flask
+  - pandas
+  - numpy
+  - scikit-learn
+  - pyarrow
