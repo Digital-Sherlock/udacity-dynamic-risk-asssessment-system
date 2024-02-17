@@ -1,0 +1,6 @@
+2024-02-17 13:31:29,010 - root - INFO - Predictions - [0 1 1 1 1]
+2024-02-17 13:31:29,016 - root - INFO - Columns stats - [{'mean': 165.65384615384616, 'median': 73.0, 'std': 278.5174959713127}, {'mean': 1502.923076923077, 'median': 955.0, 'std': 2150.065274913888}, {'mean': 26.884615384615383, 'median': 14.0, 'std': 30.745014509018585}, {'mean': 0.5769230769230769, 'median': 1.0, 'std': 0.4940474068717357}]
+2024-02-17 13:31:30,014 - root - INFO - ingestion.py execution took 1.0s
+2024-02-17 13:31:31,459 - root - INFO - training.py execution took 1.44s
+2024-02-17 13:31:31,465 - root - INFO - NA percentage per column - {'corporation': 0.0, 'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0, 'exited': 0.0}
+2024-02-17 13:31:32,900 - root - INFO - List of outdated packages generated in outdated_packages.txt

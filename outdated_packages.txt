@@ -1,0 +1,4 @@
+Package      Version Latest      Type
+------------ ------- ----------- -----
+scikit-learn 1.4.0   1.4.1.post1 wheel
+setuptools   69.0.3  69.1.0      wheel
