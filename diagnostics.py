@@ -23,21 +23,14 @@ dataset_csv_path = os.path.join(config['output_folder_path'])
 test_data_path = os.path.join(config['test_data_path'])
 model_path = os.path.join(config['prod_deployment_path'])
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='diagnostics.log',
-    filemode='w'
-)
-logger = logging.getLogger()
-
 
 def model_predictions(model, data):
     '''
-    Makes predictions with the give model.
+    Makes predictions with the given model.
 
     Input:
         - model: (str) model path
+        - data: (str) test data path
     Output:
         - yhat: (numpy.ndarray) predictions
     '''
@@ -53,7 +46,6 @@ def model_predictions(model, data):
     # Making predictions
     model = pickle.load(open(model_path, 'rb'))
     yhat = model.predict(X_test)
-    logger.info(f'Predictions - {yhat}')
 
     return yhat
 
@@ -82,8 +74,6 @@ def dataframe_summary(data: str) -> list:
         }
         for col in df.columns
             ]
-    
-    logging.info(f"Columns stats - {stats}")
 
     return stats
 
@@ -107,7 +97,6 @@ def execution_time(*args):
         # Timing the difference
         timer = abs(start_time - timeit.default_timer())
         timings[module] = timer
-        logger.info(f'{module} execution took {round(timer, 2)}s')
 
     return  timings
 
@@ -128,8 +117,7 @@ def missing_data(data: str) -> list:
     # Calculating NA percentage per column
     na_perc_col = (pd.isna(df).sum() / len(df)) * 100 # pd.Series
     na_perc_dict = na_perc_col.to_dict()
-    logger.info(f'NA percentage per column - {na_perc_dict}')
-
+    
     return na_perc_dict
 
 
@@ -148,16 +136,34 @@ def outdated_packages_list():
     
     with open('outdated_packages.txt', 'wb') as file:
         file.write(outdated)
-    
-    logger.info('List of outdated packages generated in outdated_packages.txt')
+
+    return outdated
 
 
 if __name__ == '__main__':
-    model_predictions(model_path, test_data_path)
-    dataframe_summary(dataset_csv_path)
-    execution_time('ingestion.py', 'training.py')
-    missing_data(dataset_csv_path)
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        filename='diagnostics.log',
+        filemode='a'
+    )
+    logger = logging.getLogger()
+
+    yhat = model_predictions(model_path, test_data_path)
+    logger.info(f'Predictions - {yhat}')
+
+    stats = dataframe_summary(dataset_csv_path)
+    logger.info(f"Columns stats - {stats}")
+
+    timings = execution_time('ingestion.py', 'training.py')
+    logger.info(f'Execution time - {timings}')
+
+    na_perc_dict = missing_data(dataset_csv_path)
+    logger.info(f'NA percentage per column - {na_perc_dict}')
+
     outdated_packages_list()
+    logger.info('List of outdated packages generated in outdated_packages.txt')
 
 
 

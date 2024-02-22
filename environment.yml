@@ -5,7 +5,10 @@ channels:
 dependencies:
   - python=3.10
   - flask
+  - requests
   - pandas
   - numpy
   - scikit-learn
   - pyarrow
+  - matplotlib
+  - seaborn

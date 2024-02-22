@@ -1,20 +1,25 @@
+'''
+This module calls API endpoints configured in
+app.py and saves the output in a textfile.
+
+Author: Vadim Polovnikov
+Date: 2024-02-21
+'''
+
 import requests
 
 #Specify a URL that resolves to your workspace
-URL = "http://127.0.0.1/"
+URL = "http://127.0.0.1:8000"
+
+# Calling endpoints
+response1 = requests.get(f'{URL}/prediction?datasetdir=testdata').content
+response2 = requests.get(f'{URL}/scoring').content
+response3 = requests.get(f'{URL}/summarystats').content
+response4 = requests.get(f'{URL}/diagnostics').content
 
 
-
-#Call each API endpoint and store the responses
-response1 = #put an API call here
-response2 = #put an API call here
-response3 = #put an API call here
-response4 = #put an API call here
-
-#combine all API responses
-responses = #combine reponses here
-
-#write the responses to your workspace
-
-
-
+# Combining outputs to a text file
+responses = [response1, response2, response3, response4]
+with open('apireturns.txt', 'a') as file:
+    for response in responses:
+        file.write(str(response) + '\n')
