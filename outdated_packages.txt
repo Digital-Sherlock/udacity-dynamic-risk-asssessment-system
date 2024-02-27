@@ -8,10 +8,11 @@ idna               3.4     3.6         wheel
 kiwisolver         1.4.4   1.4.5       wheel
 matplotlib         3.8.0   3.8.3       wheel
 packaging          23.1    23.2        wheel
+pandas             2.2.0   2.2.1       wheel
 pyparsing          3.0.9   3.1.1       wheel
 scikit-learn       1.4.0   1.4.1.post1 wheel
 seaborn            0.12.2  0.13.2      wheel
-setuptools         69.0.3  69.1.0      wheel
+setuptools         69.0.3  69.1.1      wheel
 sip                6.7.12  6.8.3       wheel
 tornado            6.3.3   6.4         wheel
 urllib3            2.1.0   2.2.1       wheel

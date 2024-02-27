@@ -32,7 +32,7 @@ def score_model(test_data_pth, model):
     to disk.
 
     Input:
-        - test_data: (str) test data location
+        - test_data_pth: (str) test data location
         - model: (str) model location
     Output:
         - None

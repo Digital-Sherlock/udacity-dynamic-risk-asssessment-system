@@ -31,7 +31,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     filename=os.path.join(config['output_model_path'], 'model_training.log'),
-    filemode='w'
+    filemode='a'
 )
 logger = logging.getLogger()
 

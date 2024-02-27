@@ -4,7 +4,7 @@ the source folder combines them in a single dataset
 and outputs in a .csv format to a target directory.
 
 Author: Vadim Polovnikov
-Date: 2024-01-12
+Date: 2024-02-12
 '''
 
 import pandas as pd
@@ -22,14 +22,6 @@ with open('config.json','r') as f:
 input_folder_path = config['input_folder_path']
 output_folder_path = config['output_folder_path']
 
-# Setting up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filemode='w',
-    filename=os.path.join(output_folder_path, 'ingestedfiles.txt')
-)
-logger = logging.getLogger()
 
 def merge_multiple_dataframe(src, dst):
     '''
@@ -49,7 +41,8 @@ def merge_multiple_dataframe(src, dst):
         if '.csv' in file:
             data_sources.append(os.path.join(src, file))
 
-    logging.info(f'Located data sources - {data_sources}')
+    with open('ingesteddata/ingestedfiles.txt', 'w') as file:
+        file.write(str(data_sources))
     
     # Converting data paths into Pandas DataFrames
     datasets = [pd.read_csv(dataset) for dataset in data_sources]

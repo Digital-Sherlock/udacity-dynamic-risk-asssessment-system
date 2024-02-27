@@ -30,8 +30,8 @@ model_path = os.path.join(config['output_model_path'])
 
 def store_model_into_pickle(model, dst):
     '''
-    Copies pickle file, the latestscore.txt value, and
-    the ingestfiles.txt file into the deployment directory
+    Copies pickle file, the latestscore.txt value
+    into the deployment directory.
 
     Input:
         - model: (str) path to the model
