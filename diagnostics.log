@@ -9,3 +9,13 @@
 2024-02-21 19:30:04,017 - root - INFO - Execution time - {'ingestion.py': 0.9918926990358159, 'training.py': 1.4071662978967652}
 2024-02-21 19:30:04,023 - root - INFO - NA percentage per column - {'corporation': 0.0, 'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0, 'exited': 0.0}
 2024-02-21 19:30:06,173 - root - INFO - List of outdated packages generated in outdated_packages.txt
+2024-02-28 18:48:56,161 - root - INFO - Predictions - [0 1 1 0 1]
+2024-02-28 18:48:56,169 - root - INFO - Columns stats - [{'mean': 5625.923076923077, 'median': 425.0, 'std': 19067.170236829497}, {'mean': 763.5384615384615, 'median': 97.5, 'std': 1977.4481658240022}, {'mean': 457.46153846153845, 'median': 99.0, 'std': 785.0576280057029}, {'mean': 0.5, 'median': 0.5, 'std': 0.5}]
+2024-02-28 18:48:58,919 - root - INFO - Execution time - {'ingestion.py': 1.1472375008743256, 'training.py': 1.602865002118051}
+2024-02-28 18:48:58,926 - root - INFO - NA percentage per column - {'corporation': 0.0, 'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0, 'exited': 0.0}
+2024-02-28 18:49:02,761 - root - INFO - List of outdated packages generated in outdated_packages.txt
+2024-02-28 18:50:24,761 - root - INFO - Predictions - [0 1 1 1 1]
+2024-02-28 18:50:24,768 - root - INFO - Columns stats - [{'mean': 165.65384615384616, 'median': 73.0, 'std': 278.5174959713127}, {'mean': 1502.923076923077, 'median': 955.0, 'std': 2150.065274913888}, {'mean': 26.884615384615383, 'median': 14.0, 'std': 30.745014509018585}, {'mean': 0.5769230769230769, 'median': 1.0, 'std': 0.4940474068717357}]
+2024-02-28 18:50:27,511 - root - INFO - Execution time - {'ingestion.py': 1.1510737978387624, 'training.py': 1.5918013979680836}
+2024-02-28 18:50:27,517 - root - INFO - NA percentage per column - {'corporation': 0.0, 'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0, 'exited': 0.0}
+2024-02-28 18:50:30,304 - root - INFO - List of outdated packages generated in outdated_packages.txt
