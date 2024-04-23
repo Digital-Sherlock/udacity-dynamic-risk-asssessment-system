@@ -1,6 +1,6 @@
 # A Dynamic Risk Assessment System
 
-The system is designed to predict he attrition risk of each of the company's 10,000 clients.
+The system is designed to predict attrition risk of each of the company's 10,000 clients.
 
 ## Technical Details
 
